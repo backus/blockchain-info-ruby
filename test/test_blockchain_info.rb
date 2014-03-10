@@ -45,5 +45,10 @@ class TestBlockchainInfo < Test::Unit::TestCase
       tx = @blockchain.get_tx_by_hash(hash)
       assert_equal 1394428041, tx[:time]
     end
+
+    should "get address info" do
+      address = @blockchain.get_address("19vhf68sxehcRcxLD7cnD8xqLQCSzWutu9")
+      assert_equal "61e8fda1af01697de59490f32e18ce1ef62dd91f", address[:hash160]
+    end
   end
 end

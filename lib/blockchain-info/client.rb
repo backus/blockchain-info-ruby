@@ -42,6 +42,10 @@ module BlockchainInfo
       self.get_json "/rawtx/#{hash}"
     end
 
+    def get_address(addr)
+      self.get_json "/rawaddr/#{addr}"
+    end
+
     def get(path, options = {})
       options = { body: options }
       self.class.get(path, options)
